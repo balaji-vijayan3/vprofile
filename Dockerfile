@@ -5,7 +5,7 @@ FROM tomcat:9.0-jre8
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy the WAR file into the webapps directory of Tomcat
-COPY --from=build ./var/lib/jenkins/workspace/vprofile/target/vprofile-v1.war /usr/local/tomcat/webapps/ROOT.war
+COPY /var/lib/jenkins/workspace/vprofile/target/vprofile-v1.war /usr/local/tomcat/webapps/ROOT.war
 
 # Expose the default Tomcat port
 EXPOSE 8080
